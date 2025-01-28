@@ -1,23 +1,20 @@
 /**
  * @param {number[]} arr
- * @param {Function} fn
+ * @param {function} fn
  * @return {number[]}
  */
-var filter = function(arr, fn) {
-    let arrayFilter = [];
-
+function filter(arr, fn) {
+    const result = [];
     for (let i = 0; i < arr.length; i++) {
         if (fn(arr[i], i)) {
-            arrayFilter.push(arr[i]);
+            result.push(arr[i]);
         }
     }
+    return result;
+}
 
-    return arrayFilter;
-};
+// Example 2
+const firstIndex = (array) => array[0];
 
-const array = [0,10,20,30]
-const greaterThan10 = (n) => {
-    return n > 10;
-};
-
-console.log(filter(array, greaterThan10));
+const arr = [1, 2, 3];
+console.log(firstIndex(arr));
